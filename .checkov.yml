@@ -1,11 +1,12 @@
 checkov:
   skip_checks:
-    - CKV_AWS_145    # Encryption with KMS by default
-    - CKV2_AWS_62    # S3 event notifications
-    - CKV_AWS_18     # Access logging
-    - CKV_AWS_144    # Cross-region replication
-    - CKV_AWS_21     # Versioning
-    - CKV2_AWS_61    # Lifecycle configuration
-    - CKV_AWS_21     # Public access blocks
-  quiet: true
-  soft_fail: true
+    - CKV_AWS_145    # Ensure that S3 buckets are encrypted with KMS by default
+    - CKV2_AWS_62    # Ensure S3 buckets have event notifications enabled
+    - CKV_AWS_18     # Ensure the S3 bucket has access logging enabled
+    - CKV_AWS_144    # Ensure that S3 bucket has cross-region replication enabled
+    - CKV_AWS_21     # Ensure S3 bucket has versioning enabled
+    - CKV2_AWS_61    # Ensure that an S3 bucket has a lifecycle configuration
+    - CKV_AWS_21     # Ensure all data stored in the S3 bucket have versioning enabled
+    - CKV_AWS_20     # Ensure S3 bucket has a Public Access Block
+  quiet: true         # Suppresses output except for failed checks
+  soft_fail: true     # Does not fail CI pipeline even if checks fail
