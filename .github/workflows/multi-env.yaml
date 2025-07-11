@@ -24,4 +24,4 @@ jobs:
       - name: Deploy to selected environment
         run: |
           echo "Deploying to environment..."
-        # echo "API_TOKEN is ${{ secrets.API_TOKEN }}
+          echo "API_TOKEN is ${{ secrets.API_TOKEN }}"
