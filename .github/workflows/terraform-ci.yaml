@@ -48,6 +48,8 @@ jobs:
       uses: bridgecrewio/checkov-action@master
       with:
         framework: terraform
+    - name: Run Checkov
+      run: checkov -d .
    
     - name: Terraform Plan
       run: terraform plan
