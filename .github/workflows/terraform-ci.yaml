@@ -45,7 +45,7 @@ jobs:
       run: tflint -f compact
 
     - name: Checkov
-      uses: bridgecrewio/checkov-action@main
+      uses: bridgecrewio/checkov-action@v9
       with:
         framework: terraform
     - name: Run Checkov
