@@ -22,6 +22,17 @@ resource "aws_s3_bucket_versioning" "s3_tf_versioning" {
   }
 }
 
+resource "aws_s3_bucket" "logging_bucket" {
+  bucket = "s3-logging-bucket-example"
+}
+
+resource "aws_s3_bucket_logging" "log" {
+  bucket = aws_s3_bucket.s3_tf.id
+
+  target_bucket = aws_s3_bucket.logging_bucket.id
+  target_prefix = "log/"
+}
+
 terraform {
   required_version = ">= 1.6.0"
 
