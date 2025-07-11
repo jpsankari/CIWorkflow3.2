@@ -14,6 +14,14 @@ resource "aws_s3_bucket" "s3_tf" {
   bucket_prefix = "sankari"
 }
 
+resource "aws_s3_bucket_versioning" "s3_tf_versioning" {
+  bucket = aws_s3_bucket.s3_tf.id
+
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
+
 terraform {
   required_version = ">= 1.6.0"
 
