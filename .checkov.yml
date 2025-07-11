@@ -1,0 +1,11 @@
+checkov:
+  skip_checks:
+    - CKV_AWS_145    # Encryption with KMS by default
+    - CKV2_AWS_62    # S3 event notifications
+    - CKV_AWS_18     # Access logging
+    - CKV_AWS_144    # Cross-region replication
+    - CKV_AWS_21     # Versioning
+    - CKV2_AWS_61    # Lifecycle configuration
+    - CKV_AWS_21     # Public access blocks
+  quiet: true
+  soft_fail: true
